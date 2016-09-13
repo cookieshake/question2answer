@@ -1,0 +1,3 @@
+[submodule "qa-lang/ko"]
+	path = qa-lang/ko
+	url = https://github.com/cookieshake/q2a-korean-translation.git
