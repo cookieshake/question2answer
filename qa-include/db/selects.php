@@ -810,6 +810,17 @@
 			}
 		}
 
+		//For East-Asian Languages
+		if (!empty($handlewords)) {
+			$aaa = implode($handlewords);
+		} else {
+			$aaa = $handlewords;
+		}
+
+		$selectspec['source'].=($selectparts++ ? " UNION ALL " : "").
+		"(SELECT postid AS questionid, 0 AS score, _utf8 'Q' AS matchposttype, postid AS matchpostid FROM ^posts JOIN ^users WHERE (^posts.title like _utf8 '%".$aaa."%' OR ^posts.content like _utf8 '%".$aaa."%' ) AND type='Q' )";
+		//End of Insertion
+		
 		if ($selectparts==0)
 			$selectspec['source'].='(SELECT NULL as questionid, 0 AS score, NULL AS matchposttype, NULL AS matchpostid FROM ^posts WHERE postid IS NULL)';
 
