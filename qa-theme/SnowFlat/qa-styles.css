@@ -230,6 +230,7 @@ blockquote p {
 	padding: 8px;
 	margin-bottom: 5px;
 	background: #bdc3c7;
+	font-family: "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif;
 }
 
 .qa-search-field {
