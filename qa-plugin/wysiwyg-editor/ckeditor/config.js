@@ -39,4 +39,7 @@ CKEDITOR.editorConfig = function( config ) {
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced';
 	config.codeSnippet_theme = 'railscasts';
+	config.codeSnippet_languages = {
+    
+	};
 };

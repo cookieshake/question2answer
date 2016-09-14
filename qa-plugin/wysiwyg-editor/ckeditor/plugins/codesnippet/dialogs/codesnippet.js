@@ -13,7 +13,7 @@
 			langSelectItems = [],
 			snippetLangId;
 
-		langSelectItems.push( [ editor.lang.common.notSet, '' ] );
+		langSelectItems.push( [ lang.auto, '' ] );
 
 		for ( snippetLangId in snippetLangs )
 			langSelectItems.push( [ snippetLangs[ snippetLangId ], snippetLangId ] );

@@ -292,7 +292,7 @@
 			// to defire required content with "and" operator.
 			requiredContent: 'pre',
 			styleableElements: 'pre',
-			template: '<pre><code class="' + codeClass + '"></code></pre>',
+			template: '<pre class="preetyprint linenums"><code class="' + codeClass + '"></code></pre>',
 			dialog: 'codeSnippet',
 			pathName: lang.pathName,
 			mask: true,
@@ -388,6 +388,7 @@
 
 				// Set raw text inside <code>...</code>.
 				code.add( new CKEDITOR.htmlParser.text( CKEDITOR.tools.htmlEncode( this.data.code ) ) );
+				el.addClass("prettyprint linenums")
 
 				return el;
 			}
