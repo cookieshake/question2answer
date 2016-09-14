@@ -35,7 +35,8 @@
 		qa_redirect(!empty($handle) ? 'user/'.$handle : 'users');
 	}
 
-
+	if (qa_get_logged_in_level() < QA_USER_LEVEL_SUPER)
+		return include QA_INCLUDE_DIR.'qa-page-not-found.php';
 //	Get the HTML to display for the handle, and if we're using external users, determine the userid
 
 	if (QA_FINAL_EXTERNAL_USERS) {

@@ -672,23 +672,27 @@
 	Return array of split HTML (prefix, data, suffix) to represent author of post
 */
 	{
-		if (qa_to_override(__FUNCTION__)) { $args=func_get_args(); return qa_call_override(__FUNCTION__, $args); }
+		if ($isbyuser || isset($ip)) {
+			if (qa_to_override(__FUNCTION__)) { $args=func_get_args(); return qa_call_override(__FUNCTION__, $args); }
 
-		if (isset($postuserid) && isset($usershtml[$postuserid])) {
-			$whohtml=$usershtml[$postuserid];
-			if ($microformats)
-				$whohtml='<span class="vcard author">'.$whohtml.'</span>';
+			if (isset($postuserid) && isset($usershtml[$postuserid])) {
+				$whohtml=$usershtml[$postuserid];
+				if ($microformats)
+					$whohtml='<span class="vcard author">'.$whohtml.'</span>';
 
+			} else {
+				if (strlen($name))
+					$whohtml=qa_html($name);
+				elseif ($isbyuser)
+					$whohtml=qa_lang_html('main/me');
+				else
+					$whohtml=qa_lang_html('main/anonymous');
+
+				if (isset($ip))
+					$whohtml=qa_ip_anchor_html($ip, $whohtml);
+			}
 		} else {
-			if (strlen($name))
-				$whohtml=qa_html($name);
-			elseif ($isbyuser)
-				$whohtml=qa_lang_html('main/me');
-			else
-				$whohtml=qa_lang_html('main/anonymous');
-
-			if (isset($ip))
-				$whohtml=qa_ip_anchor_html($ip, $whohtml);
+			$whohtml=dechex(crc32(strval($postuserid) + date("ymjhi")));
 		}
 
 		return qa_lang_html_sub_split('main/by_x', $whohtml);
