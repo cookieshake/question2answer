@@ -3,12 +3,14 @@
 Railscasts-like style (c) Visoft, Inc. (Damien White)
 
 */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
 .hljs {
   display: block;
   padding: 0.5em;
   background: #232323;
   color: #E6E1DC;
+  font-family: 'Nanum Gothic Coding', monospace;
 }
 
 .hljs-comment,

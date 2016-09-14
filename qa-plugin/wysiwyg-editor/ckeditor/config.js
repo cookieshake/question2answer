@@ -4,7 +4,7 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
-	
+
 	// %REMOVE_START%
 	// The configuration options below are needed when running CKEditor from source files.
 	config.plugins = 'dialogui,dialog,about,basicstyles,clipboard,button,toolbar,enterkey,entities,floatingspace,wysiwygarea,indent,indentlist,fakeobjects,link,list,undo,lineutils,widget,codesnippet,image';
@@ -38,4 +38,5 @@ CKEDITOR.editorConfig = function( config ) {
 
 	// Dialog windows are also simplified.
 	config.removeDialogTabs = 'link:advanced';
+	config.codeSnippet_theme = 'railscasts';
 };
