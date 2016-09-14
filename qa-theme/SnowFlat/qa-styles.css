@@ -7,7 +7,8 @@
 	Theme Author URI: http://www.q2amarket.com/
 	Theme License: GPLv2
 */
-
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css);
 
 .clearfix, .qa-q-item-clear,
 .qa-nav-main-list, .qa-nav-sub,
@@ -80,7 +81,8 @@ html, body {
 body {
 	background: #ecf0f1 !important;
 	position: relative;
-	font-family: "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif;
+	/* font-family: "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif; */
+	font-family: 'Nanum Gothic', sans-serif;
 	color: #34495e;
 }
 body.body-overflow {
@@ -195,15 +197,18 @@ pre {
 	overflow: auto;
 	padding: 0.4em 0.8em;
 	width: 98%;
-	font-size: 0.82em;
+	/* font-size: 0.82em; */
 }
+/*
 pre code {
 	background-color: #d6dadb;
 }
+*/
 
 code, samp, kbd {
 	color: #34495e;
-	font-family: "Courier New",Courier,monospace,sans-serif;
+	/* font-family: "Courier New",Courier,monospace,sans-serif; */
+	font-family: 'Nanum Gothic Coding', monospace;
 	text-align: left;
 }
 
@@ -1358,7 +1363,8 @@ blockquote p {
 	background: #e67e22;
 	color: #fff !important;
 	display: inline-block;
-	font-family: "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif;
+	/* font-family: "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif; */
+	font-family: 'Nanum Gothic', sans-serif;
 	font-size: 11px;
 	line-height: 1.5em;
 	padding: 2px 8px;
@@ -1779,7 +1785,8 @@ blockquote p {
 /*------[ forms ]------*/
 input, textarea, select {
 	background-color: #f5f7f7;
-	font-family: "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif;
+	/* font-family: "Ubuntu", "Helvetica", "Arial", "FreeSans", sans-serif; */
+	font-family: 'Nanum Gothic', sans-serif;
 	padding: 5px;
 	margin-top: 5px;
 	margin-bottom: 5px;
