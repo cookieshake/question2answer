@@ -1,39 +1,41 @@
-/**
- * @license Copyright (c) 2003-2014, CKSource - Frederico Knabben. All rights reserved.
+﻿/**
+ * @license Copyright (c) 2003-2016, CKSource - Frederico Knabben. All rights reserved.
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
 CKEDITOR.editorConfig = function( config ) {
-	// Define changes to default configuration here. For complete reference see:
+	
+	// %REMOVE_START%
+	// The configuration options below are needed when running CKEditor from source files.
+	config.plugins = 'dialogui,dialog,about,basicstyles,clipboard,button,toolbar,enterkey,entities,floatingspace,wysiwygarea,indent,indentlist,fakeobjects,link,list,undo,lineutils,widget,codesnippet,image';
+	config.skin = 'bootstrapck';
+	// %REMOVE_END%
+
+	// Define changes to default configuration here.
+	// For complete reference see:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
-	// NOTE: if you make changes to this file, make sure that you do not overwrite it when upgrading Q2A!
-
-	// The toolbar arrangement, two rows of buttons
-	config.toolbar = [
-		{ name: 'basic', items: [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ] },
-		{ name: 'color', items: [ 'TextColor', 'BGColor' ] },
-		{ name: 'align', items: [ 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock' ] },
-		{ name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
-		'/',
-		{ name: 'font', items: [ 'Font', 'FontSize', 'Format' ] },
-		{ name: 'paragraph', items: [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote' ] },
-		{ name: 'links', items: [ 'Link', 'Unlink' ] },
-		{ name: 'insert', items: [ 'Image', 'Table', 'HorizontalRule', 'SpecialChar', 'Smiley' ] },
-		{ name: 'last', items: [ 'RemoveFormat', 'Maximize' ] }
+	// The toolbar groups arrangement, optimized for a single toolbar row.
+	config.toolbarGroups = [
+		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+		{ name: 'forms' },
+		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
+		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
+		{ name: 'links' },
+		{ name: 'insert' },
+		{ name: 'styles' },
+		{ name: 'colors' },
+		{ name: 'tools' },
+		{ name: 'others' },
+		{ name: 'about' }
 	];
 
-	// Set the most common block elements
-	config.format_tags = 'p;h1;h2;h3;pre';
-	config.entities = false;
+	// The default plugins included in the basic setup define some buttons that
+	// are not needed in a basic editor. They are removed here.
+	config.removeButtons = 'Cut,Copy,Paste,Undo,Redo,Anchor,Underline,Strike,Subscript,Superscript';
 
-	// Make dialogs simpler
-	config.removeDialogTabs = 'image:advanced;link:advanced;table:advanced';
-
-	// Use native spell checking (note: Ctrl+right-click is required for native context menu)
-	config.disableNativeSpellChecker = false;
-
-	// Prevent blank paragraphs
-	config.fillEmptyBlocks = false;
-
+	// Dialog windows are also simplified.
+	config.removeDialogTabs = 'link:advanced';
 };
