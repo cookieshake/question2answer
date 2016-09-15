@@ -692,7 +692,8 @@
 					$whohtml=qa_ip_anchor_html($ip, $whohtml);
 			}
 		} else {
-			$whohtml=dechex(crc32(strval($postuserid) + date("ymjhi")));
+			//$whohtml=dechex(crc32(strval($postuserid) + date("ymjhi")));
+			$whohtml="익명";
 		}
 
 		return qa_lang_html_sub_split('main/by_x', $whohtml);
