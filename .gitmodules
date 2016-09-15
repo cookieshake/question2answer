@@ -4,3 +4,6 @@
 [submodule "qa-plugin/q2a-code-prettify"]
 	path = qa-plugin/q2a-code-prettify
 	url = https://github.com/cookieshake/q2a-code-prettify.git
+[submodule "qa-plugin/q2a-captcha-antibot"]
+	path = qa-plugin/q2a-captcha-antibot
+	url = https://github.com/KrzysztofKielce/q2a-captcha-antibot.git
